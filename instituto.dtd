@@ -1,0 +1,15 @@
+<!ELEMENT instituto (ciclos, notas)>
+    <!ELEMENT ciclos (especialidad+)>
+    <!ELEMENT notas (modulo+)>
+        <!ELEMENT especialidad (ciclo+)>
+        <!ELEMENT modulo (alumno+)>
+            <!ELEMENT ciclo (#PCDATA)> 
+            <!ELEMENT alumno (nombre,nota,sexo)>
+            <!ELEMENT nombre (#PCDATA)>
+            <!ELEMENT nota (#PCDATA)>
+            <!ELEMENT sexo (#PCDATA)>
+<!ATTLIST instituto nombre CDATA #REQUIRED>
+<!ATTLIST especialidad nombre CDATA #REQUIRED>
+<!ATTLIST ciclo id CDATA #REQUIRED grado (Medio|Superior) #REQUIRED>
+<!ATTLIST modulo ciclo CDATA #REQUIRED nombre CDATA #REQUIRED>
+<!ATTLIST alumno aprobado (SI|NO) #REQUIRED>
